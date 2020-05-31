@@ -15,14 +15,14 @@ if member == 5212419:
     print("--------")
     print("- Confirmed. You're logged in as a member.")
 else:
-    print("- You don't have an account number,", first_name, ", but it's alright!")
-
+    print(f"- It looks like you are not registered, {first_name.title()}, but it's alright")
 
 def main():
     print("--------")
     if user_age < 20:
         print("     ")
-        print("- You're too young to be an interepreter, ", first_name)
+        print()
+        print(f"- You're a bit young to be an interpreter, {first_name.title()}, aren't you?")
     elif user_age > 70:
         print("     ")
         print("- I admire your spirit,", first_name, ", but shouldn't you be enjoying your retirement?")
@@ -35,7 +35,7 @@ def language_check(): #Check if a user speaks more than one language
     lanspoken = int(input("How many lanaguages do you speak? (Number only)"))
     if lanspoken == 2:
         second_lan = input("- Fantastic, what is your second language?  ")
-        print(second_lan, ", right?")
+        print(f"{second_lan.title()}, right?")
         lan_response = input("(y/n)")
         if lan_response == "y":
             print("- Okay, got it!")
@@ -44,9 +44,9 @@ def language_check(): #Check if a user speaks more than one language
             language_check()
     elif lanspoken >= 3:
         print(f"- Wow!, {first_name.title()}, that's a lot of languages!")
-        print("     ")
+        print()
         lang_three = input("- What are they? ")
-        print("- They are ", lang_three)
+        print(f"- They are: {lang_three.title()}.")
         answer = input("Correct? (n/y)")
         if answer == "y":
             print("- Good! Let's continue.")
