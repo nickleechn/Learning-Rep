@@ -35,7 +35,9 @@ def language_check(): #Check if a user speaks more than one language
     lanspoken = int(input("How many lanaguages do you speak? (Number only)"))
     if lanspoken == 2:
         second_lan = input("- Fantastic, what is your second language?  ")
-        print(f"{second_lan.title()}, right?")
+        add_lan = []
+        add_lan.append(second_lan)
+        print(f"You speak {add_lan[0]}, correct?")
         lan_response = input("(y/n)")
         if lan_response == "y":
             print("- Okay, got it!")
@@ -45,8 +47,12 @@ def language_check(): #Check if a user speaks more than one language
     elif lanspoken >= 3:
         print(f"- Wow!, {first_name.title()}, that's a lot of languages!")
         print()
-        lang_three = input("- What are they? ")
-        print(f"- They are: {lang_three.title()}.")
+        duolingo_list = []
+        first_lan = input("What's your second language?") #Ask user of their second language
+        duolingo_list.append(first_lan) #Add it to the list
+        two_lan = input("What's your third language?") #same
+        duolingo_list.append(two_lan)
+        print(f"- You speak: {duolingo_list[0].title()} and {duolingo_list[1].title()}.")
         answer = input("Correct? (n/y)")
         if answer == "y":
             print("- Good! Let's continue.")
